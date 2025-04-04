@@ -10,7 +10,7 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>web-service</module>
-        <module>worker-service</module>
+        <module>web</module>
+        <module>worker</module>
     </modules>
 </project>
