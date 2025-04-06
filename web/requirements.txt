@@ -1,2 +1,4 @@
 flask
 redis
+coverage
+pytest
