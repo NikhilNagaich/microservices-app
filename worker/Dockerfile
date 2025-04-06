@@ -1,15 +1,5 @@
-# Use Python as base image
-FROM python:3.9
-
-# Set working directory
+FROM python:3.9-slim
 WORKDIR /app
-
-# Copy files
-COPY worker.py .
-COPY requirements.txt .
-
-# Install dependencies
-RUN pip install -r requirements.txt
-
-# Run Celery worker
-CMD ["celery", "-A", "worker", "worker", "--loglevel=info"]
+COPY . .
+RUN pip install --no-cache-dir -r requirements.txt
+CMD ["python", "worker.py"]
