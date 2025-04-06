@@ -3,6 +3,8 @@ version: '3.8'
 services:
   web:
     build: ./web
+    command: >
+      powershell -c "coverage run -m pytest && coverage xml && coverage report"
     ports:
       - "5000:5000"
     volumes:
@@ -15,6 +17,8 @@ services:
 
   worker:
     build: ./worker
+    command: >
+      powershell -c "coverage run -m pytest && coverage xml && coverage report"
     volumes:
       - ./worker:/app
     environment:
