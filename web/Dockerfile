@@ -1,18 +1,5 @@
-# Use Python as base image
-FROM python:3.9
-
-# Set working directory
+FROM python:3.9-slim
 WORKDIR /app
-
-# Copy files
-COPY app.py .
-COPY requirements.txt .
-
-# Install dependencies
-RUN pip install -r requirements.txt
-
-# Expose port 8081
-EXPOSE 8081
-
-# Run Flask app
+COPY . .
+RUN pip install --no-cache-dir -r requirements.txt
 CMD ["python", "app.py"]
