@@ -4,7 +4,7 @@ services:
   web:
     build: ./web
     command: >
-      sh -c "pytest test_app.py --junitxml=TEST-web.xml --cov=. --cov-report=xml"
+      sh -c "pytest test_app.py --html=web_report.html --self-contained-html"
 
     ports:
       - "5000:5000"
@@ -19,7 +19,7 @@ services:
   worker:
     build: ./worker
     command: >
-      sh -c "pytest test_worker.py --junitxml=TEST-worker.xml --cov=. --cov-report=xml"
+      sh -c "pytest test_app.py --html=web_report.html --self-contained-html"
     volumes:
       - ./worker:/app
     environment:
