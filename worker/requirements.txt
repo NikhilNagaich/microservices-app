@@ -1,3 +1,5 @@
 redis
 coverage
 pytest
+pytest-cov
+pytest-xml
