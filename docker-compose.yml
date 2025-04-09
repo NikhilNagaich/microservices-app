@@ -18,7 +18,7 @@ services:
   worker:
     build: ./worker
     command: >
-      powershell -c "coverage run -m pytest && coverage xml && coverage report"
+      sh -c "coverage run -m pytest && coverage xml && coverage report"
     volumes:
       - ./worker:/app
     environment:
