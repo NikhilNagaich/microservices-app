@@ -4,4 +4,3 @@ coverage
 pytest
 pytest-cov
 pytest-html
-pytest-xml-report
