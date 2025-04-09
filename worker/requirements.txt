@@ -2,4 +2,3 @@ redis
 coverage
 pytest
 pytest-cov
-pytest-html
